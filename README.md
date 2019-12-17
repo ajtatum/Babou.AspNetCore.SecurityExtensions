@@ -2,6 +2,8 @@
 
 # **Babou.AspNetCore.SecurityExtensions**
 
+[![Build status](https://ci.appveyor.com/api/projects/status/3erthjnqds2fb6x7?svg=true)](https://ci.appveyor.com/project/ajtatum/babou-aspnetcore-securityextensions)
+
 Contains a set of extensions which can help you make your web applications more secure.
 
 ## **Install**
