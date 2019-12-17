@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+      <TargetFramework>netcoreapp3.0</TargetFramework>
+      <AssemblyName>Babou.AspNetCore.SecurityExtensions</AssemblyName>
+      <RootNamespace>Babou.AspNetCore.SecurityExtensions</RootNamespace>
+      <Version>1.0.0</Version>
+      <PackageVersion>1.0.0</PackageVersion>
+      <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      <FileVersion>1.0.0.0</FileVersion>
+      <Company>https://ajt.io</Company>
+      <Authors>ajtatum</Authors>
+      <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+      <Copyright>ajtatum</Copyright>
+      <PackageProjectUrl>https://github.com/ajtatum/Babou.AspNetCore.SecurityExtensions</PackageProjectUrl>
+      <RepositoryUrl>https://github.com/ajtatum/Babou.AspNetCore.SecurityExtensions</RepositoryUrl>
+      <PackageIconUrl>https://raw.githubusercontent.com/ajtatum/Babou.AspNetCore.SecurityExtensions/master/assets/Babou.png</PackageIconUrl>
+      <PackageTags>asp.net core security content-security-policy feature-policy expect-ct x-frame-options hpkp noopener redirect-policy referrer-policy report-to subresource x-content-type-options x-download-options x-permitted-cross-domain x-robots-tag x-ua-compatible xss</PackageTags>
+      <PackageLicenseExpression>MIT</PackageLicenseExpression>
+      <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+      <Description>Contains a rich set of security-related middlewares for ASP.NET Core with strongly-typed configuration.</Description>
+      <NeutralLanguage>en-US</NeutralLanguage>
+      <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;8632;1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;8632;1591</NoWarn>
+  </PropertyGroup>
+
+    <ItemGroup>
+        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="FrameOptions\" />
+      <Folder Include="HttpPublicKeyPinning\" />
+      <Folder Include="XUACompatible\" />
+      <Folder Include="XRobotsTag\" />
+      <Folder Include="XPermittedCrossDomainPolicies\" />
+      <Folder Include="XDownloadOptions\" />
+      <Folder Include="XContentTypeOptions\" />
+      <Folder Include="UpgradeInsecureResources\" />
+      <Folder Include="SubresourceIntegrity\" />
+      <Folder Include="RequireAuthenticatedIdentity\" />
+      <Folder Include="ReportTo\" />
+      <Folder Include="ReferrerPolicy\" />
+      <Folder Include="RedirectPolicy\" />
+      <Folder Include="NoOpener\" />
+    </ItemGroup>
+
+</Project>

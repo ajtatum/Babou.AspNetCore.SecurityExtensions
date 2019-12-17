@@ -1,0 +1,40 @@
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+
+namespace Babou.AspNetCore.SecurityExtensions.RequireAuthenticatedIdentity
+{
+    public static partial class AppBuilderExtensions
+    {
+        /// <summary>
+        /// Requires an authenticated identity, otherwise returns 401 Unauthorized.
+        /// </summary>
+        /// <param name="app"></param>
+        public static void UseRequireAuthenticatedIdentity(this IApplicationBuilder app)
+        {
+            app.UseMiddleware<RequireAuthenticatedIdentityMiddleware>();
+        }
+
+
+        internal sealed class RequireAuthenticatedIdentityMiddleware
+        {
+            public RequireAuthenticatedIdentityMiddleware(RequestDelegate next)
+            {
+                _next = next;
+            }
+
+            private readonly RequestDelegate _next;
+
+            public async Task Invoke(HttpContext context)
+            {
+                if (!context.User?.Identity.IsAuthenticated ?? false)
+                {
+                    context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                    return;
+                }
+
+                await _next.Invoke(context);
+            }
+        }
+    }
+}
