@@ -21,6 +21,7 @@
       <Description>Contains a rich set of security-related middlewares for ASP.NET Core with strongly-typed configuration.</Description>
       <NeutralLanguage>en-US</NeutralLanguage>
       <Nullable>enable</Nullable>
+      <PackageReleaseNotes>Added CustomHeaers to add or remove headers manually.</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

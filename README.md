@@ -28,6 +28,7 @@ View the NuGet at https://www.nuget.org/packages/Babou.AspNetCore.SecurityExtens
   - Require Authenticated Identity
 - Headers
   - Content Security Policy
+  - CustomHeaders
   - Expect CT
   - Feature Policy
   - Frame Options
@@ -65,6 +66,18 @@ app.UseContentSecurityPolicy(new CspDirectiveList
 ### **Cross Origin Resource Sharing**
 
 Use the built-in support in ASP.NET Core 3.0.
+
+### **Custom Headers**
+
+Add or remove any header that you'd like.
+
+```csharp
+app.AddCustomHeaders("headerName", "headerValue");
+```
+
+```csharp
+app.RemoveHeader("headerName");
+```
 
 ### **Expect-CT**
 

@@ -13,11 +13,10 @@ namespace Babou.AspNetCore.SecurityExtensions.ContentSecurityPolicy
             : this(sources as IReadOnlyCollection<string>)
         { }
 
-        private static readonly StyleCspDirective _none = new StyleCspDirective(NoneString);
-        private static readonly StyleCspDirective _self = new StyleCspDirective(SelfString);
+        public static StyleCspDirective None { get; } = new StyleCspDirective(NoneString);
 
-        public static StyleCspDirective None => _none;
-        public static StyleCspDirective Self => _self;
+        public static StyleCspDirective Self { get; } = new StyleCspDirective(SelfString);
+
         public static StyleCspDirective Empty => new StyleCspDirective();
 
 
