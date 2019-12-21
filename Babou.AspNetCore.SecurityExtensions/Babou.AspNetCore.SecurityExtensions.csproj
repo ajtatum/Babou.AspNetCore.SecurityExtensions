@@ -8,10 +8,11 @@
       <PackageVersion>1.0.0</PackageVersion>
       <AssemblyVersion>1.0.0.0</AssemblyVersion>
       <FileVersion>1.0.0.0</FileVersion>
-      <Company>https://ajt.io</Company>
       <Authors>ajtatum</Authors>
-      <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+      <Owners>ajtatum</Owners>
       <Copyright>ajtatum</Copyright>
+      <Company>https://ajt.io</Company>
+      <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
       <PackageProjectUrl>https://github.com/ajtatum/Babou.AspNetCore.SecurityExtensions</PackageProjectUrl>
       <RepositoryUrl>https://github.com/ajtatum/Babou.AspNetCore.SecurityExtensions</RepositoryUrl>
       <PackageIconUrl>https://raw.githubusercontent.com/ajtatum/Babou.AspNetCore.SecurityExtensions/master/assets/Babou.png</PackageIconUrl>
