@@ -12,6 +12,7 @@ namespace Babou.AspNetCore.SecurityExtensions.ReportTo
         public ReportingGroup(string? name, string? group, TimeSpan maxAge, ICollection<ReportingEndpoint> endpoints, bool includeSubdomains = false)
         {
             Name = name;
+            Group = group;
             MaxAge = maxAge;
             Endpoints = endpoints.ToList();
             IncludeSubdomains = includeSubdomains;
