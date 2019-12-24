@@ -9,15 +9,15 @@ namespace Babou.AspNetCore.SecurityExtensions.ReportTo
 {
     public class ReportingGroup
     {
-        public ReportingGroup(string? name, TimeSpan maxAge, IReadOnlyCollection<ReportingEndpoint> endpoints, bool includeSubdomains = false)
+        public ReportingGroup(string? name, string? group, TimeSpan maxAge, ICollection<ReportingEndpoint> endpoints, bool includeSubdomains = false)
         {
             Name = name;
             MaxAge = maxAge;
             Endpoints = endpoints.ToList();
             IncludeSubdomains = includeSubdomains;
         }
-        public ReportingGroup(TimeSpan maxAge, IReadOnlyCollection<ReportingEndpoint> endpoints)
-            : this(null, maxAge, endpoints)
+        public ReportingGroup(TimeSpan maxAge, ICollection<ReportingEndpoint> endpoints)
+            : this(null, null, maxAge, endpoints)
         { }
         public ReportingGroup(TimeSpan maxAge, ReportingEndpoint endpoint)
             : this(maxAge, new[] { endpoint })
@@ -28,9 +28,11 @@ namespace Babou.AspNetCore.SecurityExtensions.ReportTo
 
         public string? Name { get; set; }
 
+        public string? Group { get; set; }
+
         public TimeSpan MaxAge { get; set; }
 
-        public ICollection<ReportingEndpoint> Endpoints { get; }
+        public ICollection<ReportingEndpoint> Endpoints { get; set; }
 
         public bool IncludeSubdomains { get; set; }
 
@@ -44,6 +46,11 @@ namespace Babou.AspNetCore.SecurityExtensions.ReportTo
             {
                 writer.WriteString("name", Name);
             }
+            if(Group!= null)
+            {
+                writer.WriteString("group", Group);
+            }
+
             writer.WriteNumber("max_age", (int)MaxAge.TotalSeconds);
             if (IncludeSubdomains == true)
             {
